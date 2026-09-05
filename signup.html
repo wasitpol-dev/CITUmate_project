@@ -2,114 +2,332 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sign Up - College of Innovation</title>
+
 <style>
-  * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-  body {
-    margin: 0;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f5f5f5, #e6e6e6);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 20px;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
 
-  .logo-bar {
-    width: 100%;
-    max-width: 1000px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 40px;
-  }
-  .logo-icon { display: flex; }
-  .logo-icon .sq1 { width: 22px; height: 22px; background:#8a1c2b; }
-  .logo-icon .sq2 { width: 22px; height: 22px; background:#8c8c8c; margin-left:-4px; }
-  .logo-text { font-size: 20px; }
-  .logo-text .sub { color:#555; font-weight: 400; letter-spacing:1px; }
-  .logo-text .main { color:#8a1c2b; font-weight: 800; letter-spacing:1px; }
-  .logo-text small { display:block; color:#555; font-size:12px; letter-spacing:2px; }
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
 
-  .card {
-    background: #ffffff;
-    border-radius: 16px;
-    padding: 40px 35px;
-    width: 340px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    text-align: center;
-    border-top: 6px solid #8a1c2b;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  h2 {
-    color: #333;
-    margin-bottom: 25px;
-    letter-spacing: 2px;
-    font-size: 22px;
-  }
+/* LOGO */
+.logo-container {
+  width: 100%;
+  padding: 35px 60px;
+}
 
-  .input-group {
-    display: flex;
-    align-items: center;
-    background: #f4f4f4;
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin-bottom: 16px;
-    text-align: left;
-  }
-  .input-group span.icon { color: #8a1c2b; margin-right: 8px; }
-  .input-group input {
-    border: none; background: transparent; outline: none;
-    width: 100%; font-size: 14px; color: #333;
-  }
+.logo-container img {
+  width: 280px;
+  height: auto;
+  display: block;
+}
 
-  button.btn {
-    width: 100%; padding: 13px;
-    background: #8a1c2b; color: #fff; border: none;
-    border-radius: 25px; font-size: 14px; letter-spacing: 2px;
-    cursor: pointer; transition: 0.3s; margin-top: 5px;
-  }
-  button.btn:hover { background: #6f1622; }
+/* SIGN UP AREA */
+.signup-area {
+  flex: 1;
+  width: 100%;
 
-  .link-text { margin-top: 16px; font-size: 12px; color: #777; }
-  .link-text a { color: #8a1c2b; text-decoration: none; font-weight: 600; }
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+
+/* CARD */
+.card {
+  width: 400px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  padding: 40px;
+
+  text-align: center;
+
+  border-top: 6px solid #8b1a3d;
+
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.card h1 {
+  font-size: 28px;
+
+  letter-spacing: 3px;
+
+  color: #222;
+
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 14px;
+
+  color: #888;
+
+  margin-bottom: 28px;
+}
+
+/* INPUT */
+.input-group {
+  display: flex;
+
+  align-items: center;
+
+  background: #f7f7f7;
+
+  border: 1px solid #eee;
+
+  border-radius: 10px;
+
+  padding: 14px 16px;
+
+  margin-bottom: 16px;
+
+  transition: 0.3s;
+}
+
+.input-group:focus-within {
+  background: white;
+
+  border-color: #8b1a3d;
+
+  box-shadow: 0 0 0 3px rgba(139,26,61,0.1);
+}
+
+.input-group span {
+  font-size: 19px;
+
+  margin-right: 12px;
+}
+
+.input-group input {
+  width: 100%;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  font-size: 15px;
+}
+
+.input-group input::placeholder {
+  color: #999;
+}
+
+/* BUTTON */
+.btn-signup {
+  width: 100%;
+
+  border: none;
+
+  border-radius: 10px;
+
+  padding: 15px;
+
+  margin-top: 8px;
+
+  background: #8b1a3d;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.btn-signup:hover {
+  background: #6f1531;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 15px rgba(139,26,61,0.25);
+}
+
+/* LOGIN LINK */
+.login-text {
+  margin-top: 22px;
+
+  font-size: 14px;
+
+  color: #666;
+}
+
+.login-text a {
+  color: #8b1a3d;
+
+  font-weight: bold;
+
+  text-decoration: none;
+}
+
+.login-text a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+.footer {
+  padding: 20px;
+
+  font-size: 12px;
+
+  color: #999;
+}
 </style>
 </head>
+
 <body>
 
-  <div class="logo-bar">
-    <div class="logo-icon">
-      <div class="sq1"></div>
-      <div class="sq2"></div>
-    </div>
-    <div class="logo-text">
-      <span class="sub">COLLEGE OF</span><br>
-      <span class="main">INNOVATION</span>
-      <small>THAMMASAT UNIVERSITY</small>
-    </div>
-  </div>
+<!-- LOGO -->
+<div class="logo-container">
+
+  <img
+    src="images/logo-eng_new_logo-v3-min.png"
+    alt="College of Innovation Logo"
+  >
+
+</div>
+
+
+<!-- SIGN UP -->
+<div class="signup-area">
 
   <div class="card">
-    <h2>SIGN UP</h2>
-    <div class="input-group">
-      <span class="icon">&#128100;</span>
-      <input type="text" placeholder="Username">
+
+    <h1>SIGN UP</h1>
+
+    <p class="subtitle">
+      Create your account
+    </p>
+
+    <form id="signupForm">
+
+      <!-- FULL NAME -->
+      <div class="input-group">
+        <span>👤</span>
+
+        <input
+          type="text"
+          id="fullName"
+          placeholder="Full Name"
+          required
+        >
+      </div>
+
+
+      <!-- USERNAME -->
+      <div class="input-group">
+        <span>🧑</span>
+
+        <input
+          type="text"
+          id="username"
+          placeholder="Username"
+          required
+        >
+      </div>
+
+
+      <!-- EMAIL -->
+      <div class="input-group">
+        <span>✉️</span>
+
+        <input
+          type="email"
+          id="signupEmail"
+          placeholder="Email"
+          required
+        >
+      </div>
+
+
+      <!-- PASSWORD -->
+      <div class="input-group">
+        <span>🔒</span>
+
+        <input
+          type="password"
+          id="signupPassword"
+          placeholder="Password"
+          required
+        >
+      </div>
+
+
+      <!-- CONFIRM PASSWORD -->
+      <div class="input-group">
+        <span>🔐</span>
+
+        <input
+          type="password"
+          id="confirmPassword"
+          placeholder="Confirm Password"
+          required
+        >
+      </div>
+
+
+      <!-- BUTTON -->
+      <button
+        type="submit"
+        class="btn-signup"
+      >
+        SIGN UP
+      </button>
+
+    </form>
+
+
+    <!-- LOGIN LINK -->
+    <div class="login-text">
+
+      Already have an account?
+
+      <a href="index.html">
+        Login here
+      </a>
+
     </div>
-    <div class="input-group">
-      <span class="icon">&#9993;</span>
-      <input type="email" placeholder="E-mail">
-    </div>
-    <div class="input-group">
-      <span class="icon">&#128274;</span>
-      <input type="password" placeholder="Password">
-    </div>
-    <div class="input-group">
-      <span class="icon">&#128274;</span>
-      <input type="password" placeholder="Confirm Password">
-    </div>
-    <button class="btn">CREATE ACCOUNT</button>
-    <div class="link-text">Already have an account? <a href="login.html">Login here</a></div>
+
   </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+  College of Innovation · Thammasat University
+</div>
+
+
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<!-- AUTH -->
+<script src="auth.js"></script>
 
 </body>
 </html>
