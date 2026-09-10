@@ -73,16 +73,22 @@ if (loginForm) {
             }
 
 
-            // Login สำเร็จ
-            alert("Login สำเร็จ!");
-
+            // ========================================
+            // LOGIN SUCCESS
+            // ========================================
 
             console.log("User:", data.user);
+
+
+            // ไปหน้า Booking
+            window.location.href =
+                "booking.html";
 
         }
     );
 
 }
+
 
 
 // ========================================

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>จองห้องทำกิจกรรม - College of Innovation</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI','Sarabun',sans-serif; }
+  body { background:#fafafa; color:#2b2b2b; }
+
+  /* Header */
+  header {
+    display:flex; justify-content:space-between; align-items:center;
+    padding:25px 60px; background:#fff;
+  }
+  .logo { display:flex; align-items:center; gap:12px; }
+  .logo-icon {
+    width:42px; height:42px; background:#99154d; border-radius:6px;
+    position:relative; flex-shrink:0;
+  }
+  .logo-icon::after {
+    content:''; position:absolute; top:8px; left:8px; width:18px; height:18px;
+    background:#fff; border-radius:3px;
+  }
+  .logo-icon::before {
+    content:''; position:absolute; top:-4px; right:-4px; width:10px; height:10px;
+    background:#f4a300; border-radius:2px;
+  }
+  .logo-text { line-height:1.1; }
+  .logo-text .main { font-size:20px; font-weight:800; color:#99154d; letter-spacing:1px; }
+  .logo-text .sub { font-size:11px; color:#888; letter-spacing:2px; }
+  nav ul { list-style:none; display:flex; gap:35px; }
+  nav a { text-decoration:none; color:#444; font-weight:500; font-size:15px; }
+  nav a:hover { color:#99154d; }
+  .user-btn {
+    background:#99154d; color:#fff; padding:9px 24px;
+    border:none; border-radius:8px; cursor:pointer; font-weight:600; font-size:14px;
+  }
+
+  /* Hero */
+  .hero {
+    text-align:center; padding:50px 20px 30px;
+  }
+  .hero h1 { font-size:32px; color:#2b2b2b; font-weight:800; margin-bottom:10px; }
+  .hero p { color:#777; font-size:15px; }
+
+  /* Booking Card */
+  .booking-card {
+    max-width:850px; margin:30px auto; background:#fff; border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.06); overflow:hidden;
+    border-top:6px solid transparent;
+    border-image:linear-gradient(to right,#99154d,#c62368) 1;
+  }
+  .booking-card-inner { padding:45px; }
+  .booking-card h2 {
+    text-align:center; font-size:26px; font-weight:800; color:#2b2b2b; margin-bottom:35px;
+    letter-spacing:1px;
+  }
+  .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+  .form-group { display:flex; flex-direction:column; gap:8px; }
+  .form-group.full { grid-column:1 / -1; }
+  .form-group label { font-size:13px; color:#666; font-weight:600; }
+  .input-wrap {
+    display:flex; align-items:center; gap:12px; background:#f6f6f8;
+    border-radius:10px; padding:0 18px; height:52px;
+  }
+  .input-wrap span { font-size:18px; opacity:0.6; }
+  .input-wrap input, .input-wrap select {
+    border:none; background:transparent; outline:none; width:100%;
+    font-size:14px; color:#333; height:100%;
+  }
+  textarea {
+    border:none; background:#f6f6f8; border-radius:10px; padding:14px 18px;
+    font-size:14px; outline:none; resize:vertical; min-height:70px; width:100%;
+  }
+  .submit-btn {
+    grid-column:1/-1; margin-top:10px; background:#99154d; color:#fff;
+    border:none; border-radius:10px; height:54px; font-size:16px; font-weight:700;
+    cursor:pointer; letter-spacing:1px;
+  }
+  .submit-btn:hover { background:#7d1140; }
+
+  /* Room List */
+  .rooms { max-width:1050px; margin:60px auto; padding:0 20px; }
+  .rooms h2 {
+    text-align:center; font-size:24px; font-weight:800; color:#2b2b2b; margin-bottom:30px;
+  }
+  .room-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:22px; }
+  .room-card {
+    background:#fff; border-radius:16px; overflow:hidden;
+    box-shadow:0 6px 20px rgba(0,0,0,0.06); text-align:left;
+    border-top:5px solid #99154d;
+  }
+  .room-card img { width:100%; height:160px; object-fit:cover; }
+  .room-info { padding:18px; }
+  .room-info h3 { font-size:17px; color:#2b2b2b; margin-bottom:6px; }
+  .room-info p.cap { color:#888; font-size:13px; margin-bottom:12px; }
+  .status {
+    display:inline-block; padding:3px 12px; border-radius:20px;
+    font-size:11px; font-weight:700; margin-bottom:10px;
+  }
+  .status.available { background:#e6f4ea; color:#1e8e3e; }
+  .status.busy { background:#fdeaea; color:#c62828; }
+  .select-btn {
+    width:100%; padding:10px; background:#99154d; color:#fff;
+    border:none; border-radius:8px; cursor:pointer; font-weight:700; font-size:13px;
+  }
+  .select-btn:hover { background:#7d1140; }
+
+  footer {
+    text-align:center; padding:30px; color:#999; font-size:13px;
+  }
+
+  @media (max-width:700px) {
+    header { padding:20px; flex-wrap:wrap; gap:15px; }
+    nav ul { gap:15px; font-size:13px; }
+    .form-grid { grid-template-columns:1fr; }
+    .booking-card-inner { padding:30px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-icon"></div>
+    <div class="logo-text">
+      <div class="main">INNOVATION</div>
+      <div class="sub">COLLEGE OF · THAMMASAT UNIVERSITY</div>
+    </div>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#">หน้าแรก</a></li>
+      <li><a href="#">ห้องทั้งหมด</a></li>
+      <li><a href="#">การจองของฉัน</a></li>
+      <li><a href="#">ติดต่อเรา</a></li>
+    </ul>
+  </nav>
+  <button class="user-btn">โปรไฟล์</button>
+</header>
+
+<section class="hero">
+  <h1>ระบบจองห้องทำกิจกรรม</h1>
+  <p>สำหรับนักศึกษาและบุคลากรวิทยาลัยนวัตกรรม มหาวิทยาลัยธรรมศาสตร์</p>
+</section>
+
+<section class="booking-card">
+  <div class="booking-card-inner">
+    <h2>แบบฟอร์มจองห้อง</h2>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>ชื่อ-นามสกุล</label>
+        <div class="input-wrap"><span>👤</span><input type="text" placeholder="เช่น สมชาย ใจดี"></div>
+      </div>
+      <div class="form-group">
+        <label>รหัสนักศึกษา / หน่วยงาน</label>
+        <div class="input-wrap"><span>🆔</span><input type="text" placeholder="เช่น 6512345678"></div>
+      </div>
+      <div class="form-group">
+        <label>เลือกห้อง</label>
+        <div class="input-wrap"><span>🚪</span>
+          <select>
+            <option>ห้องประชุม A (20 ที่นั่ง)</option>
+            <option>ห้องประชุม B (10 ที่นั่ง)</option>
+            <option>ห้อง Co-working Space</option>
+            <option>ห้องอเนกประสงค์ (50 ที่นั่ง)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>จำนวนผู้เข้าร่วม</label>
+        <div class="input-wrap"><span>👥</span><input type="number" placeholder="เช่น 15 คน"></div>
+      </div>
+      <div class="form-group">
+        <label>วันที่ใช้งาน</label>
+        <div class="input-wrap"><span>📅</span><input type="date"></div>
+      </div>
+      <div class="form-group">
+        <label>เวลาเริ่ม - สิ้นสุด</label>
+        <div class="input-wrap"><span>⏰</span><input type="time"><input type="time"></div>
+      </div>
+      <div class="form-group full">
+        <label>วัตถุประสงค์การใช้ห้อง</label>
+        <textarea placeholder="เช่น ประชุมกลุ่มโปรเจกต์ / จัดกิจกรรมชมรม"></textarea>
+      </div>
+      <button class="submit-btn">ส่งคำขอจองห้อง</button>
+    </div>
+  </div>
+</section>
+
+<section class="rooms">
+  <h2>ห้องที่เปิดให้จอง</h2>
+  <div class="room-grid">
+    <div class="room-card">
+      <img src="https://images.unsplash.com/photo-1517502884422-41eaead166d4?auto=format&fit=crop&w=500&q=80">
+      <div class="room-info">
+        <span class="status available">ว่าง</span>
+        <h3>ห้องประชุม A</h3>
+        <p class="cap">รองรับ 20 ที่นั่ง | มีโปรเจกเตอร์</p>
+        <button class="select-btn">เลือกห้องนี้</button>
+      </div>
+    </div>
+    <div class="room-card">
+      <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=500&q=80">
+      <div class="room-info">
+        <span class="status busy">ไม่ว่าง</span>
+        <h3>ห้องประชุม B</h3>
+        <p class="cap">รองรับ 10 ที่นั่ง | ประชุมกลุ่มเล็ก</p>
+        <button class="select-btn">เลือกห้องนี้</button>
+      </div>
+    </div>
+    <div class="room-card">
+      <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=500&q=80">
+      <div class="room-info">
+        <span class="status available">ว่าง</span>
+        <h3>ห้องอเนกประสงค์</h3>
+        <p class="cap">รองรับ 50 ที่นั่ง | จัดกิจกรรม/สัมมนา</p>
+        <button class="select-btn">เลือกห้องนี้</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  College of Innovation · Thammasat University
+</footer>
+
+</body>
+</html>
