@@ -7,6 +7,7 @@
 <title>Login - College of Innovation</title>
 
 <style>
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -16,14 +17,22 @@
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
+
+  background: linear-gradient(
+    135deg,
+    #f4f4f4,
+    #e8e8e8
+  );
 
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-/* LOGO */
+/* =========================
+   LOGO
+========================= */
+
 .logo-container {
   width: 100%;
   padding: 35px 60px;
@@ -35,7 +44,10 @@ body {
   display: block;
 }
 
-/* LOGIN AREA */
+/* =========================
+   LOGIN AREA
+========================= */
+
 .login-area {
   flex: 1;
   width: 100%;
@@ -44,45 +56,61 @@ body {
   justify-content: center;
   align-items: flex-start;
 
-  padding-top: 30px;
+  padding: 20px 20px 40px;
 }
 
-/* CARD */
+/* =========================
+   LOGIN CARD
+========================= */
+
 .card {
   width: 400px;
+  max-width: 100%;
+
   background: white;
 
-  border-radius: 18px;
+  border-radius: 20px;
 
-  padding: 42px 40px 35px;
+  padding: 45px 40px;
 
   text-align: center;
 
   border-top: 6px solid #8b1a3d;
 
-  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  box-shadow:
+    0 15px 35px rgba(0,0,0,0.12);
 }
 
+/* =========================
+   TITLE
+========================= */
+
 .card h1 {
-  font-size: 28px;
-  letter-spacing: 4px;
+  font-size: 30px;
+
+  letter-spacing: 6px;
+
   color: #222;
 
   margin-bottom: 35px;
 }
 
-/* INPUT */
+/* =========================
+   INPUT
+========================= */
+
 .input-group {
   display: flex;
+
   align-items: center;
 
   background: #f7f7f7;
 
   border: 1px solid #eee;
 
-  border-radius: 10px;
+  border-radius: 12px;
 
-  padding: 14px 16px;
+  padding: 15px 16px;
 
   margin-bottom: 18px;
 
@@ -94,11 +122,13 @@ body {
 
   border-color: #8b1a3d;
 
-  box-shadow: 0 0 0 3px rgba(139,26,61,0.1);
+  box-shadow:
+    0 0 0 3px rgba(139,26,61,0.1);
 }
 
 .input-group span {
-  font-size: 19px;
+  font-size: 20px;
+
   margin-right: 12px;
 }
 
@@ -106,35 +136,42 @@ body {
   width: 100%;
 
   border: none;
+
   outline: none;
 
   background: transparent;
 
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .input-group input::placeholder {
   color: #999;
 }
 
-/* BUTTON */
+/* =========================
+   LOGIN BUTTON
+========================= */
+
 .btn-login {
   width: 100%;
 
   border: none;
-  border-radius: 10px;
+
+  border-radius: 12px;
 
   padding: 15px;
 
   margin-top: 8px;
 
   background: #8b1a3d;
+
   color: white;
 
-  font-size: 16px;
+  font-size: 17px;
+
   font-weight: bold;
 
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 
   cursor: pointer;
 
@@ -143,14 +180,21 @@ body {
 
 .btn-login:hover {
   background: #6f1531;
+
   transform: translateY(-2px);
+
+  box-shadow:
+    0 8px 15px rgba(139,26,61,0.25);
 }
 
-/* SIGN UP */
-.signup-text {
-  margin-top: 22px;
+/* =========================
+   SIGN UP
+========================= */
 
-  font-size: 14px;
+.signup-text {
+  margin-top: 28px;
+
+  font-size: 15px;
 
   color: #666;
 }
@@ -166,12 +210,181 @@ body {
 .signup-text a:hover {
   text-decoration: underline;
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 20px;
+
+  font-size: 12px;
+
+  color: #999;
+
+  text-align: center;
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 600px) {
+
+  body {
+    min-height: 100vh;
+  }
+
+  /* LOGO */
+
+  .logo-container {
+    padding: 25px 20px 10px;
+
+    display: flex;
+
+    justify-content: center;
+  }
+
+  .logo-container img {
+    width: 190px;
+
+    max-width: 75%;
+  }
+
+
+  /* LOGIN AREA */
+
+  .login-area {
+    padding: 15px 12px 30px;
+
+    width: 100%;
+  }
+
+
+  /* CARD */
+
+  .card {
+    width: 100%;
+
+    max-width: 360px;
+
+    padding: 32px 24px;
+
+    border-radius: 18px;
+
+    border-top-width: 5px;
+  }
+
+
+  /* TITLE */
+
+  .card h1 {
+    font-size: 25px;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 28px;
+  }
+
+
+  /* INPUT */
+
+  .input-group {
+    padding: 13px 14px;
+
+    margin-bottom: 15px;
+
+    border-radius: 10px;
+  }
+
+  .input-group span {
+    font-size: 18px;
+
+    margin-right: 10px;
+  }
+
+  .input-group input {
+    font-size: 15px;
+  }
+
+
+  /* BUTTON */
+
+  .btn-login {
+    padding: 14px;
+
+    font-size: 15px;
+
+    border-radius: 10px;
+  }
+
+
+  /* SIGN UP */
+
+  .signup-text {
+    margin-top: 22px;
+
+    font-size: 14px;
+  }
+
+
+  /* FOOTER */
+
+  .footer {
+    padding: 15px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* =====================================
+   VERY SMALL PHONE
+===================================== */
+
+@media (max-width: 380px) {
+
+  .logo-container {
+    padding-top: 20px;
+  }
+
+  .logo-container img {
+    width: 170px;
+  }
+
+  .card {
+    max-width: 340px;
+
+    padding: 28px 20px;
+  }
+
+  .card h1 {
+    font-size: 23px;
+
+    margin-bottom: 25px;
+  }
+
+  .input-group {
+    padding: 12px;
+  }
+
+  .btn-login {
+    padding: 13px;
+  }
+}
+
 </style>
 </head>
 
+
 <body>
 
-<!-- LOGO -->
+
+<!-- =========================
+     LOGO
+========================= -->
+
 <div class="logo-container">
 
   <img
@@ -182,16 +395,23 @@ body {
 </div>
 
 
-<!-- LOGIN -->
+
+<!-- =========================
+     LOGIN
+========================= -->
+
 <div class="login-area">
 
   <div class="card">
 
     <h1>LOGIN</h1>
 
+
     <form id="loginForm">
 
+
       <!-- EMAIL -->
+
       <div class="input-group">
 
         <span>👤</span>
@@ -206,7 +426,9 @@ body {
       </div>
 
 
+
       <!-- PASSWORD -->
+
       <div class="input-group">
 
         <span>🔒</span>
@@ -221,7 +443,9 @@ body {
       </div>
 
 
+
       <!-- LOGIN BUTTON -->
+
       <button
         type="submit"
         class="btn-login"
@@ -229,10 +453,13 @@ body {
         LOGIN
       </button>
 
+
     </form>
 
 
-    <!-- SIGN UP LINK -->
+
+    <!-- SIGN UP -->
+
     <div class="signup-text">
 
       Don't have an account?
@@ -243,16 +470,38 @@ body {
 
     </div>
 
+
   </div>
 
 </div>
 
 
-<!-- SUPABASE -->
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<div class="footer">
+
+  College of Innovation · Thammasat University
+
+</div>
+
+
+
+<!-- =========================
+     SUPABASE
+========================= -->
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-<!-- AUTH -->
+
+<!-- =========================
+     AUTH
+========================= -->
+
 <script src="auth.js"></script>
+
 
 </body>
 </html>
