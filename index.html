@@ -9,10 +9,6 @@
 
   <style>
 
-    /* =========================
-       RESET
-    ========================= */
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -20,29 +16,16 @@
       font-family: Arial, sans-serif;
     }
 
-
-    /* =========================
-       BODY
-    ========================= */
-
     body {
       min-height: 100vh;
-
-      background: linear-gradient(
-        135deg,
-        #f4f4f4,
-        #e8e8e8
-      );
+      background: linear-gradient(135deg, #f4f4f4, #e8e8e8);
 
       display: flex;
       flex-direction: column;
       align-items: center;
     }
 
-
-    /* =========================
-       LOGO
-    ========================= */
+    /* LOGO */
 
     .logo-container {
       width: 100%;
@@ -55,10 +38,7 @@
       display: block;
     }
 
-
-    /* =========================
-       LOGIN AREA
-    ========================= */
+    /* LOGIN AREA */
 
     .login-area {
       flex: 1;
@@ -71,10 +51,7 @@
       padding: 20px;
     }
 
-
-    /* =========================
-       LOGIN CARD
-    ========================= */
+    /* CARD */
 
     .card {
       width: 400px;
@@ -91,32 +68,23 @@
       border-top: 6px solid #8b1a3d;
 
       box-shadow:
-        0 15px 35px rgba(0, 0, 0, 0.12);
+        0 15px 35px rgba(0,0,0,0.12);
     }
 
-
-    /* =========================
-       LOGIN TITLE
-    ========================= */
+    /* TITLE */
 
     .card h1 {
       font-size: 30px;
-
       letter-spacing: 2px;
-
       color: #222;
 
       margin-bottom: 30px;
     }
 
-
-    /* =========================
-       INPUT
-    ========================= */
+    /* INPUT */
 
     .input-group {
       display: flex;
-
       align-items: center;
 
       background: #f7f7f7;
@@ -132,29 +100,24 @@
       transition: 0.3s;
     }
 
-
     .input-group:focus-within {
       background: white;
 
       border-color: #8b1a3d;
 
       box-shadow:
-        0 0 0 3px rgba(139, 26, 61, 0.1);
+        0 0 0 3px rgba(139,26,61,0.1);
     }
-
 
     .input-group span {
       font-size: 20px;
-
       margin-right: 12px;
     }
-
 
     .input-group input {
       width: 100%;
 
       border: none;
-
       outline: none;
 
       background: transparent;
@@ -162,15 +125,11 @@
       font-size: 16px;
     }
 
-
     .input-group input::placeholder {
       color: #999;
     }
 
-
-    /* =========================
-       LOGIN BUTTON
-    ========================= */
+    /* LOGIN BUTTON */
 
     .btn-login {
       width: 100%;
@@ -198,29 +157,44 @@
       transition: 0.3s;
     }
 
-
     .btn-login:hover {
       background: #6f1531;
 
       transform: translateY(-2px);
 
       box-shadow:
-        0 8px 15px rgba(139, 26, 61, 0.25);
+        0 8px 15px rgba(139,26,61,0.25);
     }
 
+    /* FORGOT PASSWORD */
 
-    /* =========================
-       SIGN UP
-    ========================= */
+    .forgot-password {
+      margin-top: 16px;
+
+      font-size: 14px;
+    }
+
+    .forgot-password a {
+      color: #8b1a3d;
+
+      text-decoration: none;
+
+      font-weight: bold;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    /* SIGN UP */
 
     .signup-text {
-      margin-top: 25px;
+      margin-top: 22px;
 
       font-size: 14px;
 
       color: #666;
     }
-
 
     .signup-text a {
       color: #8b1a3d;
@@ -230,15 +204,11 @@
       text-decoration: none;
     }
 
-
     .signup-text a:hover {
       text-decoration: underline;
     }
 
-
-    /* =========================
-       FOOTER
-    ========================= */
+    /* FOOTER */
 
     .footer {
       padding: 20px;
@@ -250,14 +220,9 @@
       text-align: center;
     }
 
-
-    /* =========================
-       MOBILE
-    ========================= */
+    /* MOBILE */
 
     @media (max-width: 600px) {
-
-      /* LOGO */
 
       .logo-container {
         padding: 25px 20px 10px;
@@ -267,22 +232,15 @@
         justify-content: center;
       }
 
-
       .logo-container img {
         width: 190px;
 
         max-width: 75%;
       }
 
-
-      /* LOGIN AREA */
-
       .login-area {
         padding: 15px 12px 30px;
       }
-
-
-      /* CARD */
 
       .card {
         width: 100%;
@@ -296,9 +254,6 @@
         border-top-width: 5px;
       }
 
-
-      /* TITLE */
-
       .card h1 {
         font-size: 25px;
 
@@ -306,9 +261,6 @@
 
         margin-bottom: 28px;
       }
-
-
-      /* INPUT */
 
       .input-group {
         padding: 13px 14px;
@@ -318,20 +270,15 @@
         border-radius: 10px;
       }
 
-
       .input-group span {
         font-size: 18px;
 
         margin-right: 10px;
       }
 
-
       .input-group input {
         font-size: 15px;
       }
-
-
-      /* BUTTON */
 
       .btn-login {
         padding: 14px;
@@ -341,17 +288,15 @@
         border-radius: 10px;
       }
 
-
-      /* SIGN UP */
-
       .signup-text {
-        margin-top: 22px;
+        margin-top: 20px;
 
         font-size: 14px;
       }
 
-
-      /* FOOTER */
+      .forgot-password {
+        margin-top: 14px;
+      }
 
       .footer {
         padding: 15px;
@@ -360,10 +305,7 @@
       }
     }
 
-
-    /* =========================
-       VERY SMALL PHONE
-    ========================= */
+    /* SMALL PHONE */
 
     @media (max-width: 380px) {
 
@@ -371,11 +313,9 @@
         padding-top: 20px;
       }
 
-
       .logo-container img {
         width: 170px;
       }
-
 
       .card {
         max-width: 340px;
@@ -383,20 +323,15 @@
         padding: 28px 20px;
       }
 
-
       .card h1 {
         font-size: 23px;
-
-        letter-spacing: 2px;
 
         margin-bottom: 25px;
       }
 
-
       .input-group {
         padding: 12px;
       }
-
 
       .btn-login {
         padding: 13px;
@@ -410,9 +345,7 @@
 <body>
 
 
-  <!-- =========================
-       LOGO
-  ========================= -->
+  <!-- LOGO -->
 
   <div class="logo-container">
 
@@ -424,10 +357,7 @@
   </div>
 
 
-
-  <!-- =========================
-       LOGIN
-  ========================= -->
+  <!-- LOGIN -->
 
   <div class="login-area">
 
@@ -439,21 +369,20 @@
       <form id="loginForm">
 
 
-        <!-- EMAIL -->
+        <!-- EMAIL OR USERNAME -->
 
         <div class="input-group">
 
           <span>👤</span>
 
           <input
-            type="email"
-            id="loginEmail"
-            placeholder="Email"
+            type="text"
+            id="loginIdentifier"
+            placeholder="Email or Username"
             required
           >
 
         </div>
-
 
 
         <!-- PASSWORD -->
@@ -472,8 +401,7 @@
         </div>
 
 
-
-        <!-- LOGIN BUTTON -->
+        <!-- LOGIN -->
 
         <button
           type="submit"
@@ -485,6 +413,19 @@
 
       </form>
 
+
+      <!-- FORGOT PASSWORD -->
+
+      <div class="forgot-password">
+
+        <a
+          href="#"
+          id="forgotPassword"
+        >
+          Forgot Password?
+        </a>
+
+      </div>
 
 
       <!-- SIGN UP -->
@@ -505,10 +446,7 @@
   </div>
 
 
-
-  <!-- =========================
-       FOOTER
-  ========================= -->
+  <!-- FOOTER -->
 
   <div class="footer">
 
@@ -517,13 +455,9 @@
   </div>
 
 
-
-  <!-- =========================
-       SUPABASE
-  ========================= -->
+  <!-- SUPABASE -->
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-
 
   <!-- AUTH -->
 

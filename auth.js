@@ -30,14 +30,13 @@ if (loginForm) {
         "submit",
         async function (event) {
 
-            // ไม่ให้หน้าเว็บรีเฟรช
             event.preventDefault();
 
 
-            // รับ Email
-            const email =
+            // รับ Email หรือ Username
+            const identifier =
                 document
-                    .getElementById("loginEmail")
+                    .getElementById("loginIdentifier")
                     .value
                     .trim();
 
@@ -49,7 +48,41 @@ if (loginForm) {
                     .value;
 
 
-            // Login ด้วย Supabase
+            let email = identifier;
+
+
+            // ========================================
+            // ถ้ากรอก Username
+            // ========================================
+
+            if (!identifier.includes("@")) {
+
+                const { data: profile, error: profileError } =
+                    await supabaseClient
+                        .from("profiles")
+                        .select("email")
+                        .eq("username", identifier)
+                        .single();
+
+
+                if (profileError || !profile) {
+
+                    alert(
+                        "ไม่พบ Username นี้"
+                    );
+
+                    return;
+                }
+
+
+                email = profile.email;
+            }
+
+
+            // ========================================
+            // LOGIN SUPABASE
+            // ========================================
+
             const { data, error } =
                 await supabaseClient.auth
                     .signInWithPassword({
@@ -61,7 +94,10 @@ if (loginForm) {
                     });
 
 
-            // ถ้า Login ไม่สำเร็จ
+            // ========================================
+            // LOGIN ERROR
+            // ========================================
+
             if (error) {
 
                 alert(
@@ -105,11 +141,10 @@ if (signupForm) {
         "submit",
         async function (event) {
 
-            // ไม่ให้หน้าเว็บรีเฟรช
             event.preventDefault();
 
 
-            // รับ Full Name
+            // Full Name
             const fullName =
                 document
                     .getElementById("fullName")
@@ -117,7 +152,7 @@ if (signupForm) {
                     .trim();
 
 
-            // รับ Username
+            // Username
             const username =
                 document
                     .getElementById("username")
@@ -125,7 +160,7 @@ if (signupForm) {
                     .trim();
 
 
-            // รับ Email
+            // Email
             const email =
                 document
                     .getElementById("signupEmail")
@@ -133,14 +168,14 @@ if (signupForm) {
                     .trim();
 
 
-            // รับ Password
+            // Password
             const password =
                 document
                     .getElementById("signupPassword")
                     .value;
 
 
-            // รับ Confirm Password
+            // Confirm Password
             const confirmPassword =
                 document
                     .getElementById("confirmPassword")
@@ -163,6 +198,20 @@ if (signupForm) {
 
                 alert(
                     "Password ต้องมีอย่างน้อย 6 ตัวอักษร"
+                );
+
+                return;
+            }
+
+
+            // ========================================
+            // CHECK USERNAME
+            // ========================================
+
+            if (username.length < 3) {
+
+                alert(
+                    "Username ต้องมีอย่างน้อย 3 ตัวอักษร"
                 );
 
                 return;
@@ -213,6 +262,37 @@ if (signupForm) {
 
 
             // ========================================
+            // SAVE PROFILE
+            // ========================================
+
+            if (data.user) {
+
+                const { error: profileError } =
+                    await supabaseClient
+                        .from("profiles")
+                        .insert({
+
+                            id: data.user.id,
+
+                            username: username,
+
+                            email: email
+
+                        });
+
+
+                if (profileError) {
+
+                    console.error(
+                        "Profile Error:",
+                        profileError
+                    );
+
+                }
+            }
+
+
+            // ========================================
             // SUCCESS
             // ========================================
 
@@ -222,7 +302,7 @@ if (signupForm) {
             );
 
 
-            // กลับไปหน้า Login
+            // กลับ Login
             window.location.href =
                 "index.html";
 
