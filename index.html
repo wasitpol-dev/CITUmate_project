@@ -1,507 +1,535 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Login - College of Innovation</title>
+  <title>Login - College of Innovation</title>
 
-<style>
+  <style>
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
+    /* =========================
+       RESET
+    ========================= */
 
-body {
-  min-height: 100vh;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-  background: linear-gradient(
-    135deg,
-    #f4f4f4,
-    #e8e8e8
-  );
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    /* =========================
+       BODY
+    ========================= */
 
-/* =========================
-   LOGO
-========================= */
+    body {
+      min-height: 100vh;
 
-.logo-container {
-  width: 100%;
-  padding: 35px 60px;
-}
+      background: linear-gradient(
+        135deg,
+        #f4f4f4,
+        #e8e8e8
+      );
 
-.logo-container img {
-  width: 280px;
-  height: auto;
-  display: block;
-}
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-/* =========================
-   LOGIN AREA
-========================= */
 
-.login-area {
-  flex: 1;
-  width: 100%;
+    /* =========================
+       LOGO
+    ========================= */
 
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+    .logo-container {
+      width: 100%;
+      padding: 35px 60px;
+    }
 
-  padding: 20px 20px 40px;
-}
+    .logo-container img {
+      width: 240px;
+      height: auto;
+      display: block;
+    }
 
-/* =========================
-   LOGIN CARD
-========================= */
 
-.card {
-  width: 400px;
-  max-width: 100%;
+    /* =========================
+       LOGIN AREA
+    ========================= */
 
-  background: white;
+    .login-area {
+      flex: 1;
+      width: 100%;
 
-  border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
 
-  padding: 45px 40px;
+      padding: 20px;
+    }
 
-  text-align: center;
 
-  border-top: 6px solid #8b1a3d;
+    /* =========================
+       LOGIN CARD
+    ========================= */
 
-  box-shadow:
-    0 15px 35px rgba(0,0,0,0.12);
-}
+    .card {
+      width: 400px;
+      max-width: 100%;
 
-/* =========================
-   TITLE
-========================= */
+      background: white;
 
-.card h1 {
-  font-size: 30px;
+      border-radius: 20px;
 
-  letter-spacing: 6px;
+      padding: 45px 40px;
 
-  color: #222;
+      text-align: center;
 
-  margin-bottom: 35px;
-}
+      border-top: 6px solid #8b1a3d;
 
-/* =========================
-   INPUT
-========================= */
+      box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.12);
+    }
 
-.input-group {
-  display: flex;
 
-  align-items: center;
+    /* =========================
+       LOGIN TITLE
+    ========================= */
 
-  background: #f7f7f7;
+    .card h1 {
+      font-size: 30px;
 
-  border: 1px solid #eee;
+      letter-spacing: 2px;
 
-  border-radius: 12px;
+      color: #222;
 
-  padding: 15px 16px;
+      margin-bottom: 30px;
+    }
 
-  margin-bottom: 18px;
 
-  transition: 0.3s;
-}
+    /* =========================
+       INPUT
+    ========================= */
 
-.input-group:focus-within {
-  background: white;
+    .input-group {
+      display: flex;
 
-  border-color: #8b1a3d;
+      align-items: center;
 
-  box-shadow:
-    0 0 0 3px rgba(139,26,61,0.1);
-}
+      background: #f7f7f7;
 
-.input-group span {
-  font-size: 20px;
+      border: 1px solid #eee;
 
-  margin-right: 12px;
-}
+      border-radius: 12px;
 
-.input-group input {
-  width: 100%;
+      padding: 15px 16px;
 
-  border: none;
+      margin-bottom: 18px;
 
-  outline: none;
+      transition: 0.3s;
+    }
 
-  background: transparent;
 
-  font-size: 16px;
-}
+    .input-group:focus-within {
+      background: white;
 
-.input-group input::placeholder {
-  color: #999;
-}
+      border-color: #8b1a3d;
 
-/* =========================
-   LOGIN BUTTON
-========================= */
+      box-shadow:
+        0 0 0 3px rgba(139, 26, 61, 0.1);
+    }
 
-.btn-login {
-  width: 100%;
 
-  border: none;
+    .input-group span {
+      font-size: 20px;
 
-  border-radius: 12px;
+      margin-right: 12px;
+    }
 
-  padding: 15px;
 
-  margin-top: 8px;
+    .input-group input {
+      width: 100%;
 
-  background: #8b1a3d;
+      border: none;
 
-  color: white;
+      outline: none;
 
-  font-size: 17px;
+      background: transparent;
 
-  font-weight: bold;
+      font-size: 16px;
+    }
 
-  letter-spacing: 2px;
 
-  cursor: pointer;
+    .input-group input::placeholder {
+      color: #999;
+    }
 
-  transition: 0.3s;
-}
 
-.btn-login:hover {
-  background: #6f1531;
+    /* =========================
+       LOGIN BUTTON
+    ========================= */
 
-  transform: translateY(-2px);
+    .btn-login {
+      width: 100%;
 
-  box-shadow:
-    0 8px 15px rgba(139,26,61,0.25);
-}
+      border: none;
 
-/* =========================
-   SIGN UP
-========================= */
+      border-radius: 12px;
 
-.signup-text {
-  margin-top: 28px;
+      padding: 15px;
 
-  font-size: 15px;
+      margin-top: 8px;
 
-  color: #666;
-}
+      background: #8b1a3d;
 
-.signup-text a {
-  color: #8b1a3d;
+      color: white;
 
-  font-weight: bold;
+      font-size: 17px;
 
-  text-decoration: none;
-}
+      font-weight: bold;
 
-.signup-text a:hover {
-  text-decoration: underline;
-}
+      letter-spacing: 1px;
 
-/* =========================
-   FOOTER
-========================= */
+      cursor: pointer;
 
-.footer {
-  padding: 20px;
+      transition: 0.3s;
+    }
 
-  font-size: 12px;
 
-  color: #999;
+    .btn-login:hover {
+      background: #6f1531;
 
-  text-align: center;
-}
+      transform: translateY(-2px);
 
+      box-shadow:
+        0 8px 15px rgba(139, 26, 61, 0.25);
+    }
 
-/* =====================================
-   MOBILE
-===================================== */
 
-@media (max-width: 600px) {
+    /* =========================
+       SIGN UP
+    ========================= */
 
-  body {
-    min-height: 100vh;
-  }
+    .signup-text {
+      margin-top: 25px;
 
-  /* LOGO */
+      font-size: 14px;
 
-  .logo-container {
-    padding: 25px 20px 10px;
+      color: #666;
+    }
 
-    display: flex;
 
-    justify-content: center;
-  }
+    .signup-text a {
+      color: #8b1a3d;
 
-  .logo-container img {
-    width: 190px;
+      font-weight: bold;
 
-    max-width: 75%;
-  }
+      text-decoration: none;
+    }
 
 
-  /* LOGIN AREA */
+    .signup-text a:hover {
+      text-decoration: underline;
+    }
 
-  .login-area {
-    padding: 15px 12px 30px;
 
-    width: 100%;
-  }
+    /* =========================
+       FOOTER
+    ========================= */
 
+    .footer {
+      padding: 20px;
 
-  /* CARD */
+      font-size: 12px;
 
-  .card {
-    width: 100%;
+      color: #999;
 
-    max-width: 360px;
+      text-align: center;
+    }
 
-    padding: 32px 24px;
 
-    border-radius: 18px;
+    /* =========================
+       MOBILE
+    ========================= */
 
-    border-top-width: 5px;
-  }
+    @media (max-width: 600px) {
 
+      /* LOGO */
 
-  /* TITLE */
+      .logo-container {
+        padding: 25px 20px 10px;
 
-  .card h1 {
-    font-size: 25px;
+        display: flex;
 
-    letter-spacing: 5px;
+        justify-content: center;
+      }
 
-    margin-bottom: 28px;
-  }
 
+      .logo-container img {
+        width: 190px;
 
-  /* INPUT */
+        max-width: 75%;
+      }
 
-  .input-group {
-    padding: 13px 14px;
 
-    margin-bottom: 15px;
+      /* LOGIN AREA */
 
-    border-radius: 10px;
-  }
+      .login-area {
+        padding: 15px 12px 30px;
+      }
 
-  .input-group span {
-    font-size: 18px;
 
-    margin-right: 10px;
-  }
+      /* CARD */
 
-  .input-group input {
-    font-size: 15px;
-  }
+      .card {
+        width: 100%;
 
+        max-width: 360px;
 
-  /* BUTTON */
+        padding: 32px 24px;
 
-  .btn-login {
-    padding: 14px;
+        border-radius: 18px;
 
-    font-size: 15px;
+        border-top-width: 5px;
+      }
 
-    border-radius: 10px;
-  }
 
+      /* TITLE */
 
-  /* SIGN UP */
+      .card h1 {
+        font-size: 25px;
 
-  .signup-text {
-    margin-top: 22px;
+        letter-spacing: 2px;
 
-    font-size: 14px;
-  }
+        margin-bottom: 28px;
+      }
 
 
-  /* FOOTER */
+      /* INPUT */
 
-  .footer {
-    padding: 15px;
+      .input-group {
+        padding: 13px 14px;
 
-    font-size: 11px;
-  }
-}
+        margin-bottom: 15px;
 
+        border-radius: 10px;
+      }
 
-/* =====================================
-   VERY SMALL PHONE
-===================================== */
 
-@media (max-width: 380px) {
+      .input-group span {
+        font-size: 18px;
 
-  .logo-container {
-    padding-top: 20px;
-  }
+        margin-right: 10px;
+      }
 
-  .logo-container img {
-    width: 170px;
-  }
 
-  .card {
-    max-width: 340px;
+      .input-group input {
+        font-size: 15px;
+      }
 
-    padding: 28px 20px;
-  }
 
-  .card h1 {
-    font-size: 23px;
+      /* BUTTON */
 
-    margin-bottom: 25px;
-  }
+      .btn-login {
+        padding: 14px;
 
-  .input-group {
-    padding: 12px;
-  }
+        font-size: 15px;
 
-  .btn-login {
-    padding: 13px;
-  }
-}
+        border-radius: 10px;
+      }
 
-</style>
+
+      /* SIGN UP */
+
+      .signup-text {
+        margin-top: 22px;
+
+        font-size: 14px;
+      }
+
+
+      /* FOOTER */
+
+      .footer {
+        padding: 15px;
+
+        font-size: 11px;
+      }
+    }
+
+
+    /* =========================
+       VERY SMALL PHONE
+    ========================= */
+
+    @media (max-width: 380px) {
+
+      .logo-container {
+        padding-top: 20px;
+      }
+
+
+      .logo-container img {
+        width: 170px;
+      }
+
+
+      .card {
+        max-width: 340px;
+
+        padding: 28px 20px;
+      }
+
+
+      .card h1 {
+        font-size: 23px;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 25px;
+      }
+
+
+      .input-group {
+        padding: 12px;
+      }
+
+
+      .btn-login {
+        padding: 13px;
+      }
+    }
+
+  </style>
 </head>
 
 
 <body>
 
 
-<!-- =========================
-     LOGO
-========================= -->
+  <!-- =========================
+       LOGO
+  ========================= -->
 
-<div class="logo-container">
+  <div class="logo-container">
 
-  <img
-    src="images/logo-eng_new_logo-v3-min.png"
-    alt="College of Innovation Logo"
-  >
-
-</div>
-
-
-
-<!-- =========================
-     LOGIN
-========================= -->
-
-<div class="login-area">
-
-  <div class="card">
-
-    <h1>LOGIN</h1>
-
-
-    <form id="loginForm">
-
-
-      <!-- EMAIL -->
-
-      <div class="input-group">
-
-        <span>👤</span>
-
-        <input
-          type="email"
-          id="loginEmail"
-          placeholder="Email"
-          required
-        >
-
-      </div>
-
-
-
-      <!-- PASSWORD -->
-
-      <div class="input-group">
-
-        <span>🔒</span>
-
-        <input
-          type="password"
-          id="loginPassword"
-          placeholder="Password"
-          required
-        >
-
-      </div>
-
-
-
-      <!-- LOGIN BUTTON -->
-
-      <button
-        type="submit"
-        class="btn-login"
-      >
-        LOGIN
-      </button>
-
-
-    </form>
-
-
-
-    <!-- SIGN UP -->
-
-    <div class="signup-text">
-
-      Don't have an account?
-
-      <a href="signup.html">
-        Sign up here
-      </a>
-
-    </div>
-
+    <img
+      src="images/logo-eng_new_logo-v3-min.png"
+      alt="College of Innovation Logo"
+    >
 
   </div>
 
-</div>
+
+
+  <!-- =========================
+       LOGIN
+  ========================= -->
+
+  <div class="login-area">
+
+    <div class="card">
+
+      <h1>LOGIN</h1>
+
+
+      <form id="loginForm">
+
+
+        <!-- EMAIL -->
+
+        <div class="input-group">
+
+          <span>👤</span>
+
+          <input
+            type="email"
+            id="loginEmail"
+            placeholder="Email"
+            required
+          >
+
+        </div>
 
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+        <!-- PASSWORD -->
 
-<div class="footer">
+        <div class="input-group">
 
-  College of Innovation · Thammasat University
+          <span>🔒</span>
 
-</div>
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Password"
+            required
+          >
 
-
-
-<!-- =========================
-     SUPABASE
-========================= -->
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        </div>
 
 
-<!-- =========================
-     AUTH
-========================= -->
 
-<script src="auth.js"></script>
+        <!-- LOGIN BUTTON -->
+
+        <button
+          type="submit"
+          class="btn-login"
+        >
+          LOGIN
+        </button>
+
+
+      </form>
+
+
+
+      <!-- SIGN UP -->
+
+      <div class="signup-text">
+
+        Don't have an account?
+
+        <a href="signup.html">
+          Sign up here
+        </a>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <div class="footer">
+
+    College of Innovation · Thammasat University
+
+  </div>
+
+
+
+  <!-- =========================
+       SUPABASE
+  ========================= -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+  <!-- AUTH -->
+
+  <script src="auth.js"></script>
 
 
 </body>
+
 </html>
