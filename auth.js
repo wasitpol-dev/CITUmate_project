@@ -310,3 +310,36 @@ if (signupForm) {
     );
 
 }
+
+const forgotPasswordForm = document.getElementById("forgotPasswordForm");
+
+if (forgotPasswordForm) {
+    forgotPasswordForm.addEventListener("submit", async function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("resetEmail").value.trim();
+
+        if (!email) {
+            alert("กรุณากรอก Email");
+            return;
+        }
+
+        const { error } = await supabaseClient.auth.resetPasswordForEmail(
+            email,
+            {
+                redirectTo: window.location.origin + "/reset-password.html"
+            }
+        );
+
+        if (error) {
+            alert("ส่งลิงก์ไม่สำเร็จ\n\n" + error.message);
+            console.error(error);
+            return;
+        }
+
+        alert(
+            "ส่งลิงก์รีเซ็ตรหัสผ่านแล้ว!\n\n" +
+            "กรุณาตรวจสอบ Email ของคุณ"
+        );
+    });
+}
